@@ -25,12 +25,10 @@ E:\Projects\Vs Code\Git\Date-Miner\Host\bin\Debug\net6.0-windows\tr\System.Priva
 E:\Projects\Vs Code\Git\Date-Miner\Host\bin\Debug\net6.0-windows\zh-Hans\System.Private.ServiceModel.resources.dll
 E:\Projects\Vs Code\Git\Date-Miner\Host\bin\Debug\net6.0-windows\zh-Hant\System.Private.ServiceModel.resources.dll
 E:\Projects\Vs Code\Git\Date-Miner\Host\obj\Debug\net6.0-windows\Host.csproj.AssemblyReference.cache
-E:\Projects\Vs Code\Git\Date-Miner\Host\obj\Debug\net6.0-windows\MainWindow.g.cs
 E:\Projects\Vs Code\Git\Date-Miner\Host\obj\Debug\net6.0-windows\RegisterWindow\RegisterWindow.g.cs
 E:\Projects\Vs Code\Git\Date-Miner\Host\obj\Debug\net6.0-windows\App.g.cs
 E:\Projects\Vs Code\Git\Date-Miner\Host\obj\Debug\net6.0-windows\Host_MarkupCompile.cache
 E:\Projects\Vs Code\Git\Date-Miner\Host\obj\Debug\net6.0-windows\Host_MarkupCompile.lref
-E:\Projects\Vs Code\Git\Date-Miner\Host\obj\Debug\net6.0-windows\MainWindow.baml
 E:\Projects\Vs Code\Git\Date-Miner\Host\obj\Debug\net6.0-windows\RegisterWindow\RegisterWindow.baml
 E:\Projects\Vs Code\Git\Date-Miner\Host\obj\Debug\net6.0-windows\Host.g.resources
 E:\Projects\Vs Code\Git\Date-Miner\Host\obj\Debug\net6.0-windows\Host.GeneratedMSBuildEditorConfig.editorconfig
@@ -43,3 +41,7 @@ E:\Projects\Vs Code\Git\Date-Miner\Host\obj\Debug\net6.0-windows\refint\Host.dll
 E:\Projects\Vs Code\Git\Date-Miner\Host\obj\Debug\net6.0-windows\Host.pdb
 E:\Projects\Vs Code\Git\Date-Miner\Host\obj\Debug\net6.0-windows\Host.genruntimeconfig.cache
 E:\Projects\Vs Code\Git\Date-Miner\Host\obj\Debug\net6.0-windows\ref\Host.dll
+E:\Projects\Vs Code\Git\Date-Miner\Host\obj\Debug\net6.0-windows\MainWindow\MainWindow.g.cs
+E:\Projects\Vs Code\Git\Date-Miner\Host\obj\Debug\net6.0-windows\MainWindow\MainWindow.baml
+E:\Projects\Vs Code\Git\Date-Miner\Host\obj\Debug\net6.0-windows\SettingsWindow\SettingsWindow.g.cs
+E:\Projects\Vs Code\Git\Date-Miner\Host\obj\Debug\net6.0-windows\SettingsWindow\SettingsWindow.baml
