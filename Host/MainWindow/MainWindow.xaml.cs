@@ -29,7 +29,6 @@ namespace Host
         }
         private void Stats_Click(object sender, RoutedEventArgs e)
         {
-
         }
 
     }
