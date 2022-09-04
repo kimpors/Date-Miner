@@ -1,20 +1,20 @@
 ﻿Host
-
+1.0.0.0
 
 winexe
 C#
 .cs
-E:\Projects\Vs Code\Git\Date-Miner\Host\obj\Debug\net6.0-windows\
+e:\Projects\Vs Code\Git\Date-Miner\Host\obj\Debug\net6.0-windows\
 Host
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-E:\Projects\Vs Code\Git\Date-Miner\Host\App.xaml
+e:\Projects\Vs Code\Git\Date-Miner\Host\App.xaml
 3-1076780389
 
-51957013434
+7501303507
 202498660024
 MainWindow\MainWindow.xaml;RegisterWindow\RegisterWindow.xaml;SettingsWindow\SettingsWindow.xaml;
 
-False
+True
 

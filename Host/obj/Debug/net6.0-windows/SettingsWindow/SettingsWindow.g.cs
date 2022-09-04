@@ -52,7 +52,7 @@ namespace Host {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Host;component/settingswindow/settingswindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Host;V1.0.0.0;component/settingswindow/settingswindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\SettingsWindow\SettingsWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
