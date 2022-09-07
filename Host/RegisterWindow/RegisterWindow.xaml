@@ -21,56 +21,24 @@
         
         <StackPanel Margin="5,0,0,0">
             <Label FontSize="20">Enter name for you userBot</Label>
-            <TextBox FontSize="20" x:Name="BotName" TextChanged="TextChangedEventHandler"/>
+            <TextBox x:Name="NameValue" FontSize="20" TextChanged="TextChangedEventHandler" ToolTipService.ShowDuration="500"/>
         </StackPanel>
-
-        <Button Margin="0,30,0,20" FontSize="20" Width="40" Height="30" Grid.Column="1" Content="!">
-            <Button.ToolTip>
-                <ToolTip>
-                    It's for authorization.
-                </ToolTip>
-            </Button.ToolTip>
-        </Button>
 
         <StackPanel Margin="5,0,0,0" Grid.Row="1" Grid.Column="0">
             <Label FontSize="20">Enter your phone</Label>
-            <TextBox FontSize="20" x:Name="Phone"  TextChanged="TextChangedEventHandler"/>
+            <TextBox x:Name="PhoneValue" FontSize="20" TextChanged="TextChangedEventHandler" ToolTipService.ShowDuration="500"/>
         </StackPanel>
-
-        <Button Margin="0,30,0,20" FontSize="20" Width="40" Height="30" Grid.Row="1" Grid.Column="1" Content="!">
-            <Button.ToolTip>
-                <ToolTip>
-                    It's for authorization.
-                </ToolTip>
-            </Button.ToolTip>
-        </Button>
 
         <StackPanel Margin="5,0,0,0" Grid.Row="2" Grid.Column="0">
             <Label FontSize="20">Enter your hash</Label>
-            <TextBox FontSize="20" x:Name="Hash" TextChanged="TextChangedEventHandler"/>
+            <TextBox x:Name="HashValue" FontSize="20" TextChanged="TextChangedEventHandler" ToolTipService.ShowDuration="500"/>
         </StackPanel>
-
-        <Button Margin="0,30,0,20" FontSize="20" Width="40" Height="30" Grid.Row="2" Grid.Column="1" Content="!">
-            <Button.ToolTip>
-                <ToolTip>
-                    It's for authorization.
-                </ToolTip>
-            </Button.ToolTip>
-        </Button>
 
         <StackPanel Margin="5,0,0,0" Grid.Row="3" Grid.Column="0">
             <Label FontSize="20">Enter your id</Label>
-            <TextBox FontSize="20" x:Name="ID" TextChanged="TextChangedEventHandler"/>
+            <TextBox x:Name="IDValue" FontSize="20" TextChanged="TextChangedEventHandler" ToolTipService.ShowDuration="500"/>
         </StackPanel>
 
-        <Button Margin="0,30,0,20" FontSize="20" Width="40" Height="30" Grid.Row="3" Grid.Column="1" Content="!">
-            <Button.ToolTip>
-                <ToolTip>
-                    It's for authorization.
-                </ToolTip>
-            </Button.ToolTip>
-        </Button>
-
-        <Button Margin="0,0,50,0" FontSize="20" x:Name="Check" Click="Check_Click" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Top">Continue</Button>
+        <Button x:Name="CheckValue" Margin="0,0,50,0" FontSize="20" Click="Check_Click" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Top">Continue</Button>
     </Grid>
 </Window>
