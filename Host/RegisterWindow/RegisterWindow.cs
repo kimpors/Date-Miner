@@ -11,7 +11,6 @@ using NetMQ.Sockets;
 using System.Threading;
 using System.ComponentModel;
 using System.IO;
-using Microsoft.VisualBasic;
 
 namespace Host
 {
