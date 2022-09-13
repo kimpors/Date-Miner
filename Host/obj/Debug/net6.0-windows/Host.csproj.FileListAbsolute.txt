@@ -45,3 +45,5 @@ E:\Projects\Vs Code\Git\Date-Miner\Host\obj\Debug\net6.0-windows\MainWindow\Main
 E:\Projects\Vs Code\Git\Date-Miner\Host\obj\Debug\net6.0-windows\MainWindow\MainWindow.baml
 E:\Projects\Vs Code\Git\Date-Miner\Host\obj\Debug\net6.0-windows\SettingsWindow\SettingsWindow.g.cs
 E:\Projects\Vs Code\Git\Date-Miner\Host\obj\Debug\net6.0-windows\SettingsWindow\SettingsWindow.baml
+E:\Projects\Vs Code\Git\Date-Miner\Host\obj\Debug\net6.0-windows\InputWindow\InputWindow.g.cs
+E:\Projects\Vs Code\Git\Date-Miner\Host\obj\Debug\net6.0-windows\InputWindow\InputWindow.baml

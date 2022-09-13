@@ -9,7 +9,9 @@ using System.Diagnostics;
 using NetMQ;
 using NetMQ.Sockets;
 using System.Threading;
+using System.ComponentModel;
 using System.IO;
+using Microsoft.VisualBasic;
 
 namespace Host
 {
@@ -19,40 +21,17 @@ namespace Host
         {
             InitializeComponent();
         }
+        private Process client;
+        private ResponseSocket server;
 
-        public static class InputManager
+        private void RegisterWindow_Closing(object sender, CancelEventArgs e)
         {
-            public static bool isID { get; private set; }
-            public static bool isHASH { get; private set; }
-            public static bool isName { get; private set; }
-            public static bool isPhone { get; private set; }
+            if (client != null)
+                client.Close();
+            if (server != null)
+                server.Close();
 
-            public static bool isCorrectPhone(string phone)
-            {
-                if (phone.Length > 16 || phone.Length < 10 || phone is null)
-                    return isPhone = false;
-
-                return isPhone = new Regex(@"\+\d{1,3}\d{9,13}").IsMatch(phone);
-            }
-
-            public static bool isCorrectName(string name)
-            {
-                if (name is null || name.Length == 0)
-                    return isName = false;
-
-                return isName = new Regex(@"\w{1,50}").IsMatch(name);
-            }
-
-            public static bool isCorrectID(string id)
-                => isID = id.Length == 8;
-
-            public static bool isCorrectHASH(string hash)
-                => isHASH = hash.Length == 32;
-
-            public static bool isAllCorrect()
-                => true ? isID && isHASH && isName && isPhone : false;
         }
-
         private void TextChangedEventHandler(object sender, TextChangedEventArgs args)
             => ((TextBox)sender).Background = Brushes.Transparent;
 
@@ -64,7 +43,7 @@ namespace Host
             {
                 switch (tb.Name)
                 {
-                    case "BotName":
+                    case "NameValue":
                         if (!InputManager.isCorrectName(tb.Text))
                         {
                             tb.ToolTip = new ToolTip()
@@ -76,7 +55,7 @@ namespace Host
                         }
                         break;
 
-                    case "Phone":
+                    case "PhoneValue":
                         if (!InputManager.isCorrectPhone(tb.Text))
                         {
 
@@ -89,7 +68,7 @@ namespace Host
                         }
                         break;
 
-                    case "Hash":
+                    case "HashValue":
                         if (!InputManager.isCorrectHASH(tb.Text))
                         {
                             tb.ToolTip = new ToolTip()
@@ -101,7 +80,7 @@ namespace Host
                         }
                         break;
 
-                    case "ID":
+                    case "IDValue":
                         if (!InputManager.isCorrectID(tb.Text))
                         {
                             tb.ToolTip = new ToolTip()
@@ -118,10 +97,9 @@ namespace Host
                 }
             }
 
-            if (!InputManager.isAllCorrect())
+            if (InputManager.isAllCorrect())
             {
                 string script = @$"{new DirectoryInfo(Directory.GetCurrentDirectory()).Parent.FullName}\Client\main.py", fileName = "";
-                MessageBox.Show(script);
 
                 await Task.Run(() =>
                 {
@@ -145,28 +123,58 @@ namespace Host
                     processInfo.FileName = fileName;
                     processInfo.Arguments = @$"""{script}""";
 
-                    using (var server = new ResponseSocket())
+                    using (server = new ResponseSocket())
                     {
                         server.Bind("tcp://*:5555");
 
-                        using (Process client = Process.Start(processInfo))
+                        client = Process.Start(processInfo) ?? throw new System.Exception("Bad client process");
+                        client.StandardInput.AutoFlush = true;
+
+
+                        string msg;
+                        while (true)
                         {
+                            msg = server.ReceiveFrameString();
 
-                            string msg;
-                            while (true)
+                            switch (msg)
                             {
-                                msg = server.ReceiveFrameString();
-                                MessageBox.Show(msg + " message");
-
-                                switch (msg)
-                                {
-                                    case "Hello":
-                                        server.SendFrame("World");
+                                case "Name":
+                                    Dispatcher.Invoke(() => server.SendFrame(NameValue.Text));
                                     break;
-                                }
+                                case "ID":
+                                    Dispatcher.Invoke(() => server.SendFrame(IDValue.Text));
+                                    break;
+                                case "Hash":
+                                    Dispatcher.Invoke(() => server.SendFrame(HashValue.Text));
+                                    break;
+                                case "Phone":
+                                    Dispatcher.Invoke(() =>
+                                    {
+                                        client.StandardInput.WriteLine(PhoneValue.Text);
+                                        server.SendFrame("");
+                                    });
+                                    break;
+                                case "Confirm":
+                                    Dispatcher.Invoke(() =>
+                                    {
+                                        client.StandardInput.WriteLine("y");
+                                        server.SendFrame("");
+                                    });
+                                    break;
+                                case "Code":
+                                    Dispatcher.Invoke(() =>
+                                    {
+                                        InputWindow input = new InputWindow();
+                                        if (input.ShowDialog() == true)
+                                            client.StandardInput.WriteLine(input.CodeValue.Text);
+                                        server.SendFrame("");
+                                    });
+                                    break;
                             }
+
                         }
                     }
+
                 });
             }
         }

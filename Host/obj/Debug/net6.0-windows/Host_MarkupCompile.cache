@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 E:\Projects\Vs Code\Git\Date-Miner\Host\App.xaml
-3-1076780389
+4-254079855
 
-51957013434
+7-1929370020
 202498660024
-MainWindow\MainWindow.xaml;RegisterWindow\RegisterWindow.xaml;SettingsWindow\SettingsWindow.xaml;
+InputWindow\InputWindow.xaml;MainWindow\MainWindow.xaml;RegisterWindow\RegisterWindow.xaml;SettingsWindow\SettingsWindow.xaml;
 
 False
 
